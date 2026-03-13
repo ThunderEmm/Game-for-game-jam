@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://cu66fav5sbfna"]
+
+[ext_resource type="Script" uid="uid://bv87rq277t3p2" path="res://Player/player.gd" id="1_53fr8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8xu4o"]
+
+[sub_resource type="Animation" id="Animation_7hu7w"]
+resource_name = "Crouch"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_Collision:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.35, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0844891, -0.299115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player_Collision:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flashlight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0844891, -0.299115)]
+}
+
+[sub_resource type="Animation" id="Animation_djlj6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_Collision:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player_Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.732218, -0.299115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player_Collision:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flashlight:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.732218, -0.299115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nj583"]
+_data = {
+&"Crouch": SubResource("Animation_7hu7w"),
+&"RESET": SubResource("Animation_djlj6")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lka4h"]
+animation = &"Crouch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uwftb"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qx0qi"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1rc27"]
+nodes/output/position = Vector2(540, 60)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_uwftb")
+nodes/Animation/position = Vector2(60, 20)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_lka4h")
+"nodes/Animation 2/position" = Vector2(60, 180)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_qx0qi")
+nodes/Blend2/position = Vector2(320, 40)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
+
+[sub_resource type="GDScript" id="GDScript_qplvj"]
+script/source = "extends Control
+@onready var right_bar: ProgressBar = $right_bar
+@onready var left_bar: ProgressBar = $left_bar
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if get_value() == 100 :
+		if modulate.a == 1 :
+			animation_player.play(\"staminabar_fade\")
+	else :
+		animation_player.play(\"RESET\")
+
+func loss_stamina() :
+	right_bar.value -= 0.4
+	left_bar.value -= 0.4
+	
+func gain_stamina(Can_Sprint) :
+	if Can_Sprint == true :
+		right_bar.value += 0.1
+		left_bar.value += 0.1
+	elif Can_Sprint == false :
+		right_bar.value += 0.15
+		left_bar.value += 0.15
+	
+func get_value() :
+	var value = right_bar.value + left_bar.value
+	return value
+	
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eadoy"]
+bg_color = Color(0.197937, 0.197937, 0.197937, 0.329412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdvn0"]
+bg_color = Color(0.787759, 0.787759, 0.787759, 1)
+
+[sub_resource type="Theme" id="Theme_ptaoy"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_eadoy")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_gdvn0")
+
+[sub_resource type="Animation" id="Animation_cubs5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rguyn"]
+resource_name = "staminabar_fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji07a"]
+_data = {
+&"RESET": SubResource("Animation_cubs5"),
+&"staminabar_fade": SubResource("Animation_rguyn")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1266309525]
+script = ExtResource("1_53fr8")
+
+[node name="Player_Collision" type="CollisionShape3D" parent="." unique_id=411637084]
+shape = SubResource("CapsuleShape3D_8xu4o")
+
+[node name="Player_Camera" type="Camera3D" parent="." unique_id=1901710096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732218, -0.299115)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player_Camera" unique_id=240432661]
+target_position = Vector3(0, 0, -1)
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1152559827]
+libraries/ = SubResource("AnimationLibrary_nj583")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=151913818]
+tree_root = SubResource("AnimationNodeBlendTree_1rc27")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0
+
+[node name="player_ui" type="Control" parent="." unique_id=795720874]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crosshair" type="ColorRect" parent="player_ui" unique_id=585069759]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -5.0
+offset_right = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.133333)
+
+[node name="Stamina_bar" type="Control" parent="player_ui" unique_id=1067846620]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = SubResource("GDScript_qplvj")
+
+[node name="right_bar" type="ProgressBar" parent="player_ui/Stamina_bar" unique_id=471539823]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ptaoy")
+max_value = 50.0
+value = 50.0
+show_percentage = false
+
+[node name="left_bar" type="ProgressBar" parent="player_ui/Stamina_bar" unique_id=1857580771]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ptaoy")
+max_value = 50.0
+value = 50.0
+fill_mode = 1
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player_ui/Stamina_bar" unique_id=128297152]
+libraries/ = SubResource("AnimationLibrary_ji07a")
+
+[node name="Flashlight" type="SpotLight3D" parent="." unique_id=1727109712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732218, -0.299115)
+visible = false
+spot_range = 6.08302
+spot_angle = 17.6924
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1817807732]
+mesh = SubResource("CapsuleMesh_l8h54")
