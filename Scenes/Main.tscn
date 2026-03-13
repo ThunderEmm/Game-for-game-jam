@@ -32,12 +32,12 @@ transform = Transform3D(1, 0, 0, 0, 0.0008203685, 0.99999964, 0, -0.99999964, 0.
 light_energy = 0.475
 light_angular_distance = 90.0
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1554857946]
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1554857946 groups=["Interactable"]]
 transform = Transform3D(2.499145, 0, 0, 0, 2.4455814, 0, 0, 0, 2.4800625, 0, 1.4565144, -4.1742992)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=2023610704]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=2023610704 groups=["Interactable"]]
 shape = SubResource("BoxShape3D_r150o")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2/CollisionShape3D" unique_id=208727268]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2/CollisionShape3D" unique_id=208727268 groups=["Interactable"]]
 mesh = SubResource("BoxMesh_idj7w")
 surface_material_override/0 = SubResource("StandardMaterial3D_kln2b")
