@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mfpp5rbnr2q2"]
+
+[ext_resource type="PackedScene" uid="uid://bdvnih2junyci" path="res://Apartment/Furniture/TV/source/TV.glb" id="1_vnvob"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84fgt"]
+size = Vector3(4.0295715, 2.0752563, 0.35308838)
+
+[node name="TV2" unique_id=709000336 instance=ExtResource("1_vnvob")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=529664236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048675537, 1.0290697, -0.08560181)
+shape = SubResource("BoxShape3D_84fgt")

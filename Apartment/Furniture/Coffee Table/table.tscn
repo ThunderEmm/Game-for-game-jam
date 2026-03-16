@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cpalg1nuaoflp"]
+
+[ext_resource type="PackedScene" uid="uid://de30fkpdt1lel" path="res://Apartment/Furniture/Coffee Table/table.glb" id="1_mkclu"]
+[ext_resource type="Texture2D" uid="uid://l46gh8yk0v7w" path="res://Textures/SBS - Tiny Texture Pack 2/128x128/Wood/Wood_01-128x128.png" id="2_4rfwg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4c3r"]
+albedo_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+albedo_texture = ExtResource("2_4rfwg")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ralm2"]
+albedo_color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+albedo_texture = ExtResource("2_4rfwg")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkclu"]
+size = Vector3(15.671143, 7.8951416, 14.189575)
+
+[node name="table" unique_id=759504717 instance=ExtResource("1_mkclu")]
+
+[node name="Cube_001_Cube_002" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="0" unique_id=1542630623]
+surface_material_override/0 = SubResource("StandardMaterial3D_d4c3r")
+
+[node name="Cube_002_Cube_003" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="1" unique_id=764841939]
+surface_material_override/0 = SubResource("StandardMaterial3D_ralm2")
+
+[node name="Cube_003_Cube_004" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="2" unique_id=1593679358]
+surface_material_override/0 = SubResource("StandardMaterial3D_ralm2")
+
+[node name="Cube_004_Cube_005" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="3" unique_id=354671906]
+surface_material_override/0 = SubResource("StandardMaterial3D_ralm2")
+
+[node name="Cube_Cube_001" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="4" unique_id=581490081]
+surface_material_override/0 = SubResource("StandardMaterial3D_ralm2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node_0" parent_id_path=PackedInt32Array(1604614476) index="5" unique_id=587519950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5235596, 3.4475708, 6.1519165)
+shape = SubResource("BoxShape3D_mkclu")
