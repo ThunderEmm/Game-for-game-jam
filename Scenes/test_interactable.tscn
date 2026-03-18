@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://bvmjobuwksoie"]
+
+[ext_resource type="Script" uid="uid://c85p51duminhm" path="res://Scenes/test_interactable.gd" id="1_5n8rl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uetir"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5n8rl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeyi2"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uetir"]
+_surfaces = [{
+"aabb": AABB(-0.5369504, -0.5369504, -0.5369504, 1.0739008, 1.0739008, 1.0739008),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("lXUJv5V1CT+VdQk/lXUJP5V1CT+VdQm/lXUJP5V1CT+VdQk/lXUJv5V1CT+VdQm/lXUJv5V1Cb+VdQk/lXUJP5V1Cb+VdQm/lXUJP5V1Cb+VdQk/lXUJv5V1Cb+VdQm/lXUJP5V1CT+VdQk/lXUJv5V1CT+VdQm/lXUJP5V1CT+VdQm/lXUJv5V1CT+VdQk/lXUJP5V1Cb+VdQk/lXUJv5V1Cb+VdQm/lXUJP5V1Cb+VdQm/lXUJv5V1Cb+VdQk/lXUJP5V1CT+VdQk/lXUJv5V1Cb+VdQk/lXUJv5V1CT+VdQk/lXUJP5V1Cb+VdQk/lXUJP5V1CT+VdQm/lXUJv5V1Cb+VdQm/lXUJv5V1CT+VdQm/lXUJP5V1Cb+VdQm//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5n8rl"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5n8rl"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1802390503]
+script = ExtResource("1_5n8rl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=855256123]
+shape = SubResource("BoxShape3D_uetir")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1108882524]
+mesh = SubResource("BoxMesh_5n8rl")
+surface_material_override/0 = SubResource("StandardMaterial3D_jeyi2")
+
+[node name="outline" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D" unique_id=1919842816]
+mesh = SubResource("ArrayMesh_uetir")
+surface_material_override/0 = SubResource("StandardMaterial3D_5n8rl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=588980368]
+shape = SubResource("BoxShape3D_5n8rl")
