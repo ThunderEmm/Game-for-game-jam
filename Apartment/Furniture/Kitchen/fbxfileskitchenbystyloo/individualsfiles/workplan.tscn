@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ctyganhfxwgj8"]
+
+[ext_resource type="PackedScene" uid="uid://c8u5ewsbwlf8e" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/workplan.fbx" id="1_ehi38"]
+
+[node name="workplan" unique_id=77691083 instance=ExtResource("1_ehi38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.382, 0, 9.615)
+
+[node name="Cube_007" parent="." index="0" unique_id=684820783]
+transform = Transform3D(0, -100, -2.9802322e-06, -2.9802322e-06, 0, 100, -100, 2.9802322e-06, 0, 0.00020313263, 1, -0.0003376007)

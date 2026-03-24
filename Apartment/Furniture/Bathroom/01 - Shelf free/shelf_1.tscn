@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dtcs4j30ws13d"]
+
+[ext_resource type="PackedScene" uid="uid://keka5uvv5qin" path="res://Apartment/Furniture/Bathroom/01 - Shelf free/shelf1.blend" id="1_i2mng"]
+[ext_resource type="Texture2D" uid="uid://chefbjk0sedtv" path="res://Textures/SBS - Tiny Texture Pack 2/128x128/Wood/Wood_02-128x128.png" id="2_dhwq5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stswt"]
+albedo_color = Color(0.7451571, 0.5747434, 0.4950027, 1)
+albedo_texture = ExtResource("2_dhwq5")
+uv1_scale = Vector3(2, 2, 2)
+
+[node name="shelf1" unique_id=1460850031 instance=ExtResource("1_i2mng")]
+
+[node name="shelf" parent="." index="0" unique_id=664559186]
+surface_material_override/0 = SubResource("StandardMaterial3D_stswt")

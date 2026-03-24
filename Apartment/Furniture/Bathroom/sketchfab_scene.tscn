@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dv865nmv1ptxu"]
+
+[ext_resource type="PackedScene" uid="uid://cxovlwlff0ms" path="res://Apartment/Furniture/Bathroom/bathroom_sink_cabinet.glb" id="21_dutin"]
+
+[node name="Sketchfab_Scene" unique_id=1381249456 instance=ExtResource("21_dutin")]
+
+[node name="Material223" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="0" unique_id=201478918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material224" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="1" unique_id=1185673026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material225" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="2" unique_id=1681610700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material226" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="3" unique_id=1432044922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material227" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="4" unique_id=68314663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material228" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="5" unique_id=281234180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material229" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="6" unique_id=1160329193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material230" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="7" unique_id=523272785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material231" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="8" unique_id=1485102149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material232" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="9" unique_id=517588378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material233" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="10" unique_id=1249434725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material234" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="11" unique_id=1845205549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material235" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="12" unique_id=158180350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material236" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="13" unique_id=1992443596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material237" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="14" unique_id=1134643071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material238" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="15" unique_id=582977490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material239" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="16" unique_id=1369939751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material240" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="17" unique_id=1903525808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)
+
+[node name="Material241" parent="Sketchfab_model/Collada visual scene group/SketchUp/group_11" parent_id_path=PackedInt32Array(5937381) index="18" unique_id=86183657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1532676, 0, 0, 0)

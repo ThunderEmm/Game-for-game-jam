@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdr6ggce1815j"]
+
+[ext_resource type="PackedScene" uid="uid://cgv25g14buq8h" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/fridge.fbx" id="1_wvuus"]
+
+[node name="fridge" unique_id=2113329837 instance=ExtResource("1_wvuus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.152, 0, -9.167)
+
+[node name="fridge" parent="." index="0" unique_id=1520363674]
+transform = Transform3D(68.39896, 0, 0, 0, -2.989813e-06, 68.39895, 0, -68.39895, -2.989813e-06, 0.00029563904, 3.0994325, 0.00043201447)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dnios367dyeyp"]
+
+[ext_resource type="PackedScene" uid="uid://iekw7c4w54h5" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/robinet.fbx" id="1_6hqgf"]
+
+[node name="robinet" unique_id=55101655 instance=ExtResource("1_6hqgf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.398, 3.455, -0.955)
+
+[node name="Cylinder_004" parent="." index="0" unique_id=643404604]
+transform = Transform3D(56.810535, 0, 0, 0, -6.7723436e-06, 56.81053, 0, -56.81053, -6.7723436e-06, -0.0002155304, -0.00041794777, 0.00044637918)

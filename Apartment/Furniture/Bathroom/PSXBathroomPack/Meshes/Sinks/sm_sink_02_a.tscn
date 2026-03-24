@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2t6exsu1ion8"]
+
+[ext_resource type="PackedScene" uid="uid://b4v46tck4lwv5" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Sinks/SM_Sink_02_A.FBX" id="1_xqlxv"]
+[ext_resource type="Texture2D" uid="uid://d3777b7m60yhi" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Textures/Sink_02/T_Sink_02_A.PNG" id="2_1ly81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fol1l"]
+albedo_texture = ExtResource("2_1ly81")
+
+[node name="SM_Sink_02_A" unique_id=2002747100 instance=ExtResource("1_xqlxv")]
+
+[node name="SM_Sink_02_A" parent="." index="0" unique_id=1610593202]
+surface_material_override/0 = SubResource("StandardMaterial3D_fol1l")
+
+[node name="UCX_SM_Sink_02_A" parent="." index="1" unique_id=1206382260]
+visible = false

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bv87rq277t3p2" path="res://Player/player.gd" id="1_53fr8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8xu4o"]
+height = 1.3
 
 [sub_resource type="Animation" id="Animation_7hu7w"]
 resource_name = "Crouch"
@@ -122,6 +123,7 @@ animation = &"RESET"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qx0qi"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_1rc27"]
+graph_offset = Vector2(-320.26572, -54.628925)
 nodes/output/position = Vector2(540, 60)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_uwftb")
 nodes/Animation/position = Vector2(60, 20)
@@ -221,19 +223,22 @@ _data = {
 script = ExtResource("1_53fr8")
 
 [node name="Player_Collision" type="CollisionShape3D" parent="." unique_id=411637084]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, -0.35, 0)
 shape = SubResource("CapsuleShape3D_8xu4o")
 
 [node name="Player_Camera" type="Camera3D" parent="." unique_id=1901710096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732218, -0.299115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72221875, -0.6092908)
 
 [node name="RayCast3D" type="RayCast3D" parent="Player_Camera" unique_id=240432661]
 target_position = Vector3(0, 0, -1)
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1152559827]
+active = false
 libraries/ = SubResource("AnimationLibrary_nj583")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=151913818]
+active = false
 tree_root = SubResource("AnimationNodeBlendTree_1rc27")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Blend2/blend_amount = 0.0
@@ -307,10 +312,11 @@ show_percentage = false
 libraries/ = SubResource("AnimationLibrary_ji07a")
 
 [node name="Flashlight" type="SpotLight3D" parent="." unique_id=1727109712]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.732218, -0.299115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08448911, -0.299115)
 visible = false
 spot_range = 6.08302
 spot_angle = 17.6924
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1817807732]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_l8h54")

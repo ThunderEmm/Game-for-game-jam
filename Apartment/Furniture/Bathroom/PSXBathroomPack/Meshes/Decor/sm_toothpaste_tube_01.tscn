@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://djhdfq5hphgmi"]
+
+[ext_resource type="PackedScene" uid="uid://d3p28mw5by45q" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Decor/SM_Toothpaste_Tube_01.FBX" id="1_lf30p"]
+[ext_resource type="Texture2D" uid="uid://sde85jwsugk2" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Textures/Toothpaste_Tube_01/T_Toothpaste_Tube_01_A.PNG" id="2_lf30p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4752n"]
+albedo_texture = ExtResource("2_lf30p")
+
+[node name="SM_Toothpaste_Tube_01" unique_id=1958817991 instance=ExtResource("1_lf30p")]
+
+[node name="SM_Toothpaste_Tube_01" parent="." index="0" unique_id=1568706796]
+surface_material_override/0 = SubResource("StandardMaterial3D_4752n")
+
+[node name="UCX_SM_Toothpaste_Tube_01" parent="." index="1" unique_id=1100197153]
+visible = false

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dxe0v0o1lwu7e"]
+
+[ext_resource type="PackedScene" uid="uid://dedsp1knrssok" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Decor/Towels/SM_Bathroom_Towel_01_C.FBX" id="1_lpmmn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tbkq"]
+albedo_color = Color(0.4156126, 0.2871481, 0.2357943, 1)
+
+[node name="SM_Bathroom_Towel_01_C" unique_id=1580771954 instance=ExtResource("1_lpmmn")]
+
+[node name="SM_Bathroom_Towel_01_C" parent="." index="0" unique_id=1470267228]
+surface_material_override/0 = SubResource("StandardMaterial3D_2tbkq")
+
+[node name="UCX_SM_Bathroom_Towel_01_C" parent="." index="1" unique_id=291955380]
+visible = false

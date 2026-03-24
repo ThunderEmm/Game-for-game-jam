@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dpcbqmwon8vbs"]
+
+[ext_resource type="PackedScene" uid="uid://cjyfoj6dt25sf" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/barchair.fbx" id="1_5kcjs"]
+
+[node name="barchair" unique_id=393997863 instance=ExtResource("1_5kcjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1134355, 2.7742112, 7.5190916)
+
+[node name="Cube_001" parent="." index="0" unique_id=1534685220]
+transform = Transform3D(34.502293, 0, 0, 0, -4.112994e-06, 34.50229, 0, -34.50229, -4.112994e-06, 0, 0, 0)

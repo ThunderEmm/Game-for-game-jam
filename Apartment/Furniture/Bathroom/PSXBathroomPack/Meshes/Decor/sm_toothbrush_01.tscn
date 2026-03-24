@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4hll8wawwhu6"]
+
+[ext_resource type="PackedScene" uid="uid://cyj84f6hqsirp" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Decor/SM_Toothbrush_01.FBX" id="1_3raj6"]
+[ext_resource type="Texture2D" uid="uid://7qgl5kxqweoa" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Textures/Toothbrush_01/T_Toothbrush_01.PNG" id="2_k73ut"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b6d8"]
+albedo_color = Color(1, 0.22352941, 0.1882353, 1)
+albedo_texture = ExtResource("2_k73ut")
+
+[node name="SM_Toothbrush_01" unique_id=1198615537 instance=ExtResource("1_3raj6")]
+
+[node name="SM_Toothbrush_01" parent="." index="0" unique_id=1712354013]
+surface_material_override/0 = SubResource("StandardMaterial3D_0b6d8")
+
+[node name="UCX_SM_Toothbrush_01" parent="." index="1" unique_id=754412141]
+visible = false

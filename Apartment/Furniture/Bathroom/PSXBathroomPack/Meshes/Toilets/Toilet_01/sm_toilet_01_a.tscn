@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c3qg0f4f3yl8k"]
+
+[ext_resource type="PackedScene" uid="uid://cg8omykxdqfwj" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Toilets/Toilet_01/SM_Toilet_01_A.FBX" id="1_h4kba"]
+[ext_resource type="Texture2D" uid="uid://b3p2vti78rxtf" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Textures/Toilets_01/T_Toilets_01_A1.PNG" id="2_w51sp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihgin"]
+albedo_texture = ExtResource("2_w51sp")
+
+[node name="SM_Toilet_01_A" unique_id=1583913297 instance=ExtResource("1_h4kba")]
+
+[node name="SM_Toilet_01_A" parent="." index="0" unique_id=1875678058]
+surface_material_override/0 = SubResource("StandardMaterial3D_ihgin")
+
+[node name="UCX_SM_Toilet_01_A" parent="." index="1" unique_id=1384638749]
+visible = false

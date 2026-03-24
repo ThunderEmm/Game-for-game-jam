@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d0ddqtwr7n8mo"]
+
+[ext_resource type="PackedScene" uid="uid://dddhkpcnoo0xw" path="res://Apartment/Furniture/Bedroom/BedroomPack/Bed.fbx" id="1_08f4q"]
+[ext_resource type="Texture2D" uid="uid://bx138d6igicdl" path="res://Apartment/Furniture/Bedroom/BedroomPack/Texture.png" id="2_74v7k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjrv3"]
+albedo_texture = ExtResource("2_74v7k")
+
+[node name="Bed" unique_id=799097521 instance=ExtResource("1_08f4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0923395, 0, 0)
+
+[node name="bed" parent="." index="0" unique_id=116680709]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_rjrv3")

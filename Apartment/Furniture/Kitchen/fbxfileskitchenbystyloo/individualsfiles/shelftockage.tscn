@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cid5rx6qphg5o"]
+
+[ext_resource type="PackedScene" uid="uid://cm5xwj76knggh" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/shelftockage.fbx" id="1_gikf4"]
+
+[node name="shelftockage" unique_id=182583104 instance=ExtResource("1_gikf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.636726, 7.2858734, 9.584003)
+
+[node name="Cube_016" parent="." index="0" unique_id=808041962]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dtmeqx8h5voth"]
+
+[ext_resource type="PackedScene" uid="uid://c065kvjy1h0wv" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Decor/SM_Bathroom_Mat_01.FBX" id="1_38qlv"]
+[ext_resource type="Texture2D" uid="uid://wk10874applm" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Textures/Decor/Bathroom_Mat_01/T_Bathroom_Mat_01_B.PNG" id="2_kykae"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fude"]
+albedo_color = Color(0, 0.59231466, 0.9500416, 1)
+albedo_texture = ExtResource("2_kykae")
+uv1_scale = Vector3(3, 1, 1)
+
+[node name="SM_Bathroom_Mat_01" unique_id=301899946 instance=ExtResource("1_38qlv")]
+
+[node name="SM_Bathroom_Mat_01" parent="." index="0" unique_id=1011572847]
+surface_material_override/0 = SubResource("StandardMaterial3D_8fude")

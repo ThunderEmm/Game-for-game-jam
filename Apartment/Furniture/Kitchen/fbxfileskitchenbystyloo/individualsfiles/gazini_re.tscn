@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhs23ppdoqbd5"]
+
+[ext_resource type="PackedScene" uid="uid://cla3cemyn6h1" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/gazini_re.fbx" id="1_wlqkg"]
+
+[node name="gazini_re" unique_id=1294286553 instance=ExtResource("1_wlqkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -3.27)
+
+[node name="Cube_002" parent="." index="0" unique_id=595513934]
+transform = Transform3D(62.280495, 0, 0, 0, -7.4244135e-06, 62.28049, 0, -62.28049, -7.4244135e-06, -0.04475403, 1.0777466, -0.0051305294)

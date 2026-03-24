@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dy32af2onym3h"]
+
+[ext_resource type="PackedScene" uid="uid://bhav8pm8g74u3" path="res://Apartment/Furniture/Kitchen/marble-table/source/LP1.fbx" id="1_wudsm"]
+[ext_resource type="Texture2D" uid="uid://csv50n8lk1qtx" path="res://Apartment/Furniture/Kitchen/marble-table/textures/LP1_Material.001_BaseColor.1001.png" id="2_q62lc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nr8t4"]
+albedo_texture = ExtResource("2_q62lc")
+
+[node name="LP1" unique_id=442283347 instance=ExtResource("1_wudsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6476015, 0)
+
+[node name="Cylinder_001" parent="." index="0" unique_id=340403960]
+transform = Transform3D(100, 0, 0, 0, -2.3841858e-05, 99.99999, 0, -99.99999, -2.3841858e-05, 0, -0.6476015, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_nr8t4")

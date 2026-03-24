@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://djl47cyqpjdvg"]
+
+[ext_resource type="PackedScene" uid="uid://cohymow5u1pwp" path="res://Apartment/Furniture/window_blinds_low_poly_3d_model.glb" id="1_noauw"]
+
+[node name="Sketchfab_Scene" unique_id=607418298 instance=ExtResource("1_noauw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.61224, 164.32861, -199.93932)
+
+[node name="Blinds" parent="Sketchfab_model/Collada visual scene group" parent_id_path=PackedInt32Array(469748782) index="0" unique_id=415932442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

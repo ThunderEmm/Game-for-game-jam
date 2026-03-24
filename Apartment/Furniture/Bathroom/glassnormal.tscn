@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dyenjwpbhx2av"]
+
+[ext_resource type="PackedScene" uid="uid://cco8vt5cyey22" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/glassnormal.fbx" id="1_elmcw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_reuk1"]
+transparency = 1
+albedo_color = Color(0.6449482, 0.99999994, 0.9955531, 0.5176471)
+
+[node name="glassnormal" unique_id=1236718765 instance=ExtResource("1_elmcw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.259558, 3.5015266, 2.5369825)
+
+[node name="Cube_020" parent="." index="0" unique_id=1448484491]
+transform = Transform3D(21.75866, 0, 0, 0, -2.5938343e-06, 21.758657, 0, -21.758657, -2.5938343e-06, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_reuk1")

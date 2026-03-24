@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://gvr6jcdrch7a"]
+
+[ext_resource type="PackedScene" uid="uid://cti077wwtkssq" path="res://Apartment/Furniture/Kitchen/fbxfileskitchenbystyloo/individualsfiles/hote.fbx" id="1_qgk5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgk5q"]
+albedo_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+
+[node name="hote" unique_id=676177855 instance=ExtResource("1_qgk5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.417496, 8.108033, -3.8653827)
+
+[node name="Cube_018" parent="." index="0" unique_id=623093630]
+transform = Transform3D(46.98277, 0, 0, 0, -7.118994e-06, 59.718445, 0, -59.718445, -7.118994e-06, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qgk5q")

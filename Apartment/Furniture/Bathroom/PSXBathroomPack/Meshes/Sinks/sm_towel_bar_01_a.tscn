@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dm17rbli8w4ua"]
+
+[ext_resource type="PackedScene" uid="uid://bucvfec36xma4" path="res://Apartment/Furniture/Bathroom/PSXBathroomPack/Meshes/Decor/Towel_Rack/SM_Towel_Bar_01_A.FBX" id="1_s81lb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7l3x"]
+
+[node name="SM_Towel_Bar_01_A" unique_id=1543543759 instance=ExtResource("1_s81lb")]
+
+[node name="SM_Towel_Bar_01_A" parent="." index="0" unique_id=80905791]
+surface_material_override/0 = SubResource("StandardMaterial3D_q7l3x")
+
+[node name="UCX_SM_Towel_Bar_01_A" parent="." index="1" unique_id=1218132814]
+visible = false

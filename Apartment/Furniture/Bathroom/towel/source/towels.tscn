@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://f8iv4irpapgd"]
+
+[ext_resource type="PackedScene" uid="uid://bs7bknedqusdc" path="res://Apartment/Furniture/Bathroom/towel/source/Towels.glb" id="1_g8bhk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5rf3"]
+albedo_color = Color(0.4156126, 0.2871481, 0.2357943, 1)
+
+[node name="Towels" unique_id=491419412 instance=ExtResource("1_g8bhk")]
+
+[node name="Helix006" parent="Sketchfab_model/towel_FBX/RootNode" parent_id_path=PackedInt32Array(1944337110) index="0" unique_id=839584215]
+visible = false
+
+[node name="Object002__0" parent="Sketchfab_model/towel_FBX/RootNode/Object002/Object_7" parent_id_path=PackedInt32Array(240265293) index="0" unique_id=1746875935]
+surface_material_override/0 = SubResource("StandardMaterial3D_m5rf3")
