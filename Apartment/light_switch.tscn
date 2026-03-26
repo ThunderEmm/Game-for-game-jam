@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://b2ssbdfae0stn"]
+
+[ext_resource type="Script" uid="uid://13fxnlopao8h" path="res://light_switch.gd" id="1_gl5n5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_om1k0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_om1k0"]
+albedo_color = Color(0.8431839, 0.8431839, 0.84318376, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_33alp"]
+_surfaces = [{
+"aabb": AABB(-0.5288675, -0.5288675, -0.5288675, 1.057735, 1.057735, 1.057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("3GMHv9xjBz/cYwc/3GMHP9xjBz/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjB7/cYwe/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjBz/cYwc/3GMHv9xjBz/cYwe/3GMHP9xjBz/cYwe/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHv9xjB7/cYwe/3GMHP9xjB7/cYwe/3GMHv9xjB7/cYwc/3GMHP9xjBz/cYwc/3GMHv9xjB7/cYwc/3GMHv9xjBz/cYwc/3GMHP9xjB7/cYwc/3GMHP9xjBz/cYwe/3GMHv9xjB7/cYwe/3GMHv9xjBz/cYwe/3GMHP9xjB7/cYwe//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftidl"]
+emission_enabled = true
+emission = Color(0.5370113, 0.5370113, 0.5370113, 1)
+emission_energy_multiplier = 7.74
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_md7oi"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgalw"]
+albedo_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+
+[node name="Light Switch" type="StaticBody3D" unique_id=1975560710]
+script = ExtResource("1_gl5n5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=725840886 groups=["Interactable"]]
+transform = Transform3D(0.065711655, 0, 0, 0, 0.3187322, 0, 0, 0, 0.20071775, 0, 0, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_om1k0")
+
+[node name="outline" type="MeshInstance3D" parent="MeshInstance3D" unique_id=927765535]
+mesh = SubResource("ArrayMesh_33alp")
+surface_material_override/0 = SubResource("StandardMaterial3D_ftidl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=304134002]
+transform = Transform3D(0.065711655, 0, 0, 0, 0.3187322, 0, 0, 0, 0.20071775, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_md7oi")
+
+[node name="Switch Pivot" type="StaticBody3D" parent="." unique_id=1099000621]
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.014539719, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Switch Pivot" unique_id=2023397056 groups=["Interactable"]]
+transform = Transform3D(0.04228494, 0, 0, 0, 0.12601542, 0, 0, 0, 0.045118485, 0, 0.06272888, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_dgalw")

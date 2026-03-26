@@ -14,35 +14,42 @@ extends CharacterBody3D
 @onready var Stamina = 100   
 @onready var Can_Sprint = true   
 @onready var Can_Rotate_Camera = true   
-@onready var object_on_mark 
+@onready var object_on_mark
+signal interact_object
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
+	if ray_cast_3d.is_colliding():
+		var collider = ray_cast_3d.get_collider()
+		interact_object.emit(collider)
+	else:
+		interact_object.emit(null)
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if Input.is_action_pressed("Sprint") and SPEED != 75 and Can_Sprint == true :
-			velocity.x = direction.x * Sprint_SPEED * delta
-			velocity.z = direction.z * Sprint_SPEED * delta
-			stamina_bar.loss_stamina() 
-		else :
+		# if Input.is_action_pressed("Sprint") and SPEED != 75 and Can_Sprint == true :
+		# 	velocity.x = direction.x * Sprint_SPEED * delta
+		# 	velocity.z = direction.z * Sprint_SPEED * delta
+		# 	stamina_bar.loss_stamina() 
+		# else :
 			velocity.x = direction.x * SPEED * delta
 			velocity.z = direction.z * SPEED * delta
-			stamina_bar.gain_stamina(Can_Sprint)
+			# stamina_bar.gain_stamina(Can_Sprint)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		stamina_bar.gain_stamina(Can_Sprint)
+		# stamina_bar.gain_stamina(Can_Sprint)
 
 	move_and_slide()
-	Crouch(delta)
-	Stamina_Control(delta)
-	Use_Flashlight()
+	# Crouch(delta)
+	# Stamina_Control(delta)
+	# Use_Flashlight()
 	Change_Cross_hair() 
 	set_Object_om_mark()
 	
@@ -68,26 +75,28 @@ func Change_Cross_hair() :
 		crosshair.color.a = 0.3
 		
 func Use_Flashlight() :
-	if Input.is_action_just_pressed("Flashlight") :
-		flashlight.visible = !flashlight.visible
+	# if Input.is_action_just_pressed("Flashlight") :
+	# 	flashlight.visible = !flashlight.visible
+	pass
 	
 func Stamina_Control(_delta) :
-	
-	Stamina = stamina_bar.get_value()
-	if Stamina == 0 :
-		Can_Sprint = false
-	if Stamina == 100 :
-		Can_Sprint = true
+	# Stamina = stamina_bar.get_value()
+	# if Stamina == 0 :
+	# 	Can_Sprint = false
+	# if Stamina == 100 :
+	# 	Can_Sprint = true
+	pass
 	
 func Crouch(delta):
-	if Input.is_action_pressed("Crouch"):
-		Crouch_progress += 3 * delta
-		SPEED = 75
-	else :
-		Crouch_progress -= 5 * delta
-		SPEED = 200
-	Crouch_progress = clamp(Crouch_progress, 0, 1) 
-	animation_tree.set("parameters/Blend2/blend_amount", Crouch_progress)
+	# if Input.is_action_pressed("Crouch"):
+	# 	Crouch_progress += 3 * delta
+	# 	SPEED = 75
+	# else :
+	# 	Crouch_progress -= 5 * delta
+	# 	SPEED = 200
+	# Crouch_progress = clamp(Crouch_progress, 0, 1) 
+	# animation_tree.set("parameters/Blend2/blend_amount", Crouch_progress)
+	pass
 
 func _input(event):
 	if event is InputEventMouseMotion and Can_Rotate_Camera == true :

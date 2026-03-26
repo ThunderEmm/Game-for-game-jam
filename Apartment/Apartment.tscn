@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://71p82ox26p73" path="res://Apartment/Furniture/Bedroom/BedroomPack/closet.tscn" id="38_0g83y"]
 [ext_resource type="PackedScene" uid="uid://bgkc78eajnhn4" path="res://Apartment/Furniture/Bedroom/BedroomPack/desk.tscn" id="39_ofbcx"]
 [ext_resource type="PackedScene" uid="uid://dfhsb44j8nhxe" path="res://Apartment/Furniture/Bedroom/90s-00s-pc/source/zombie__computer.tscn" id="40_s4cs6"]
+[ext_resource type="PackedScene" uid="uid://b2ssbdfae0stn" path="res://Apartment/light_switch.tscn" id="41_0g83y"]
 [ext_resource type="PackedScene" uid="uid://djl47cyqpjdvg" path="res://Apartment/Furniture/window_blinds_low_poly_3d_model.tscn" id="41_86788"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg48p"]
@@ -129,6 +130,28 @@ emission_energy_multiplier = 6.02
 
 [sub_resource type="BoxMesh" id="BoxMesh_fg0c6"]
 material = SubResource("StandardMaterial3D_6q0ti")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0g83y"]
+size = Vector3(2.494751, 3.5195923, 1.0952148)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofbcx"]
+size = Vector3(1.3441162, 2.2332764, 3.519287)
+
+[sub_resource type="BoxMesh" id="BoxMesh_om1k0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_om1k0"]
+albedo_color = Color(0.8431839, 0.8431839, 0.84318376, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g83y"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_om1k0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofbcx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4cs6"]
+albedo_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
 
 [node name="Node3D" type="Node3D" unique_id=2100541272]
 
@@ -379,7 +402,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_y74rr")
 
 [node name="Roof" type="StaticBody3D" parent="." unique_id=1287745840]
 transform = Transform3D(4.0587648e-16, 4.9794503e-06, 125.7671, 0.21242453, -4.9794503e-06, 0, 9.285371e-09, 113.91655, -5.497455e-06, 22.017532, 3.0236745, -1.4092468e-23)
-visible = false
 script = ExtResource("6_om1k0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roof" unique_id=1196127220]
@@ -634,15 +656,6 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27352905, 0.0909729, -0.006652832)
 shape = SubResource("BoxShape3D_om1k0")
 
-[node name="Closet" parent="." unique_id=1075645885 instance=ExtResource("38_0g83y")]
-transform = Transform3D(-4.371139e-08, 0, 1.5605069, 0, 1.1599054, 0, -1, 0, -6.8211925e-08, -20.367807, -1.539283, 7.546276)
-
-[node name="Desk" parent="." unique_id=880036235 instance=ExtResource("39_ofbcx")]
-transform = Transform3D(1.4950979, 0, 0, 0, 1.1025479, 0, 0, 0, 1.3404866, -26.872484, -1.4936652, 1.1148627)
-
-[node name="zombie _computer" parent="." unique_id=540341390 instance=ExtResource("40_s4cs6")]
-transform = Transform3D(-0.15, 0, -2.65436e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.17579031, -27.218887, -0.25728822, 1.1691953)
-
 [node name="Window" type="StaticBody3D" parent="." unique_id=1588673962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.00718, 1.0775653, 3.748)
 
@@ -721,8 +734,9 @@ mesh = SubResource("BoxMesh_v3x76")
 transform = Transform3D(0.16109388, 0, 0, 0, -7.2418445e-08, -1.7884866, 0, 1.6567409, -7.817724e-08, -0.00090408325, -0.009129643, -0.90437555)
 mesh = SubResource("BoxMesh_fg0c6")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=307058826]
+[node name="Test Light" type="SpotLight3D" parent="." unique_id=307058826]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.174652, 2.494701, 7.5691843)
+visible = false
 light_energy = 5.862
 light_indirect_energy = 16.0
 light_size = 1.0
@@ -730,3 +744,109 @@ light_specular = 0.0
 spot_range = 4096.0
 spot_attenuation = 0.4
 spot_angle = 89.99
+
+[node name="Closet" type="StaticBody3D" parent="." unique_id=1815013505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.367807, -1.539283, 7.546276)
+
+[node name="Closet" parent="Closet" unique_id=1075645885 instance=ExtResource("38_0g83y")]
+transform = Transform3D(-4.371139e-08, 0, 1.5605069, 0, 1.1599054, 0, -1, 0, -6.8211925e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Closet" unique_id=2104694285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022583008, 1.7129211, -0.034856796)
+shape = SubResource("BoxShape3D_0g83y")
+
+[node name="Desk With Computer" type="StaticBody3D" parent="." unique_id=1879675623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.872484, -1.4936652, 1.1148627)
+
+[node name="Desk" parent="Desk With Computer" unique_id=880036235 instance=ExtResource("39_ofbcx")]
+transform = Transform3D(1.4950979, 0, 0, 0, 1.1025479, 0, 0, 0, 1.3404866, 0, 0, 0)
+
+[node name="zombie _computer" parent="Desk With Computer" unique_id=540341390 instance=ExtResource("40_s4cs6")]
+transform = Transform3D(-0.15, 0, -2.65436e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.17579031, -0.34640312, 1.236377, 0.054332614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk With Computer" unique_id=158389631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40802002, 1.0575562, -0.39572465)
+shape = SubResource("BoxShape3D_ofbcx")
+
+[node name="Light Switch2" type="StaticBody3D" parent="." unique_id=1874255002]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.443676, 0.3779539, 3.8117886)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light Switch2" unique_id=1710832173]
+transform = Transform3D(0.065711655, 0, 0, 0, 0.3187322, 0, 0, 0, 0.20071775, 0, 0, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_om1k0")
+
+[node name="Switch Pivot" type="StaticBody3D" parent="Light Switch2" unique_id=2005863517]
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.014539719, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light Switch2/Switch Pivot" unique_id=1064276014]
+transform = Transform3D(0.04228494, 0, 0, 0, 0.12601542, 0, 0, 0, 0.045118485, 0, 0.06272888, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_0g83y")
+
+[node name="Light Switch3" type="StaticBody3D" parent="." unique_id=1846377443]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.8924043, 0.3779539, 3.4262893)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light Switch3" unique_id=593893734]
+transform = Transform3D(0.065711655, 0, 0, 0, 0.3187322, 0, 0, 0, 0.20071775, 0, 0, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_om1k0")
+
+[node name="Switch Pivot" type="StaticBody3D" parent="Light Switch3" unique_id=530657053]
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.014539719, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light Switch3/Switch Pivot" unique_id=1916052323]
+transform = Transform3D(0.04228494, 0, 0, 0, 0.12601542, 0, 0, 0, 0.045118485, 0, 0.06272888, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_0g83y")
+
+[node name="Light Switch4" type="StaticBody3D" parent="." unique_id=1591974698]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8924043, 0.3779539, 3.8123443)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light Switch4" unique_id=785920648]
+transform = Transform3D(0.065711655, 0, 0, 0, 0.3187322, 0, 0, 0, 0.20071775, 0, 0, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_om1k0")
+
+[node name="Switch Pivot" type="StaticBody3D" parent="Light Switch4" unique_id=582340035]
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.014539719, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light Switch4/Switch Pivot" unique_id=1570837261]
+transform = Transform3D(0.04228494, 0, 0, 0, 0.12601542, 0, 0, 0, 0.045118485, 0, 0.06272888, 0)
+mesh = SubResource("BoxMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_0g83y")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=847198752]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -27.309492, 0.6148829, 4.1771545)
+visible = false
+light_energy = 2.267
+spot_range = 3.5861354
+spot_angle = 43.412434
+
+[node name="Bedroom Lights" type="StaticBody3D" parent="." unique_id=5910494]
+
+[node name="Large Light" type="StaticBody3D" parent="Bedroom Lights" unique_id=358171830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.976421, 2.905765, 2.7673683)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bedroom Lights/Large Light" unique_id=1294804755]
+transform = Transform3D(1.5, 0, 0, 0, 0.057, 0, 0, 0, 1.5, -22.976421, 2.9509568, 2.7673683)
+top_level = true
+mesh = SubResource("CylinderMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_ofbcx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Bedroom Lights/Large Light" unique_id=1850003114]
+transform = Transform3D(1.4, 0, 0, 0, 0.057, 0, 0, 0, 1.4, -22.976421, 2.905765, 2.7673683)
+top_level = true
+mesh = SubResource("CylinderMesh_om1k0")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4cs6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Bedroom Lights/Large Light" unique_id=307605029]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -22.976421, 2.905765, 2.7673683)
+top_level = true
+light_energy = 16.0
+light_specular = 0.0
+spot_range = 8.876749
+spot_angle = 89.99
+
+[node name="Light Switch2" parent="Bedroom Lights" unique_id=1975560710 instance=ExtResource("41_0g83y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.219109, 0.3779539, -1.330888)

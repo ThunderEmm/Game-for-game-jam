@@ -223,11 +223,11 @@ _data = {
 script = ExtResource("1_53fr8")
 
 [node name="Player_Collision" type="CollisionShape3D" parent="." unique_id=411637084]
-transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, -0.35, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 shape = SubResource("CapsuleShape3D_8xu4o")
 
 [node name="Player_Camera" type="Camera3D" parent="." unique_id=1901710096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72221875, -0.6092908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.030441, -0.30674797)
 
 [node name="RayCast3D" type="RayCast3D" parent="Player_Camera" unique_id=240432661]
 target_position = Vector3(0, 0, -1)
